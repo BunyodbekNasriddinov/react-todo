@@ -1,0 +1,58 @@
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+main {
+  flex-grow: 1;
+}
+img {
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px 0;
+  max-width: 1140px;
+  width: 100%;
+}
+
+.main-btn {
+  padding: 10px 20px;
+  background-color: #38cc8b;
+  border: none;
+  border-radius: 10px;
+}
+
+.todo__title {
+  font-weight: 700;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 55px;
+  letter-spacing: -0.520833px;
+}
+
+.todo__input {
+  padding: 15px 32px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0.25px;
+  color: #3d3b48;
+  border: 1px solid #5e54a4;
+  outline: none;
+}
