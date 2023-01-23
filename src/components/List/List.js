@@ -13,15 +13,17 @@ export const List = () => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
-    setTodos([
-      ...todos,
-      {
-        id: todos.at(-1)?.id + 1 || 1,
-        text: elInput.current.value,
-        isCompleted: false,
-      },
-    ]);
-    elInput.current.value = "";
+    if (elInput.current.value !== "") {
+      setTodos([
+        ...todos,
+        {
+          id: todos.at(-1)?.id + 1 || 1,
+          text: elInput.current.value,
+          isCompleted: false,
+        },
+      ]);
+      elInput.current.value = "";
+    }
   };
 
   localStorage.setItem("todos", JSON.stringify(todos));
@@ -60,7 +62,9 @@ export const List = () => {
           ))}
         </ul>
       ) : (
-        <h2 className="text-center text-warning mt-5">Todo'lar mavjud emas 😕</h2>
+        <h2 className="text-center text-warning mt-5">
+          Todo'lar mavjud emas 😕
+        </h2>
       )}
     </div>
   );
