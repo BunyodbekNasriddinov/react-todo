@@ -46,18 +46,22 @@ export const List = () => {
           </button>
         </div>
       </form>
-      <ul className="list-group mt-5 w-50 mx-auto">
-        {todos.map((todo) => (
-          <Item
-            key={todo.id}
-            text={todo.text}
-            id={todo.id}
-            isCompleted={todo.isCompleted}
-            todos={todos}
-            setTodos={setTodos}
-          />
-        ))}
-      </ul>
+      {todos.length ? (
+        <ul className="list-group mt-5 w-50 mx-auto">
+          {todos.map((todo) => (
+            <Item
+              key={todo.id}
+              text={todo.text}
+              id={todo.id}
+              isCompleted={todo.isCompleted}
+              todos={todos}
+              setTodos={setTodos}
+            />
+          ))}
+        </ul>
+      ) : (
+        <h2 className="text-center text-warning mt-5">Todo'lar mavjud emas 😕</h2>
+      )}
     </div>
   );
 };
